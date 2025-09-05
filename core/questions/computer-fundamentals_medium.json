@@ -1,0 +1,28 @@
+[
+    {
+        "id": 4,
+        "question": "What is pipelining in CPU architecture?",
+        "options": {
+            "A": "A technique to increase memory size",
+            "B": "A method to execute multiple instructions simultaneously",
+            "C": "A way to reduce power consumption",
+            "D": "A type of cache memory"
+        },
+        "answer": "B",
+        "topic": "Computer Architecture",
+        "difficulty": "medium"
+    },
+    {
+        "id": 5,
+        "question": "Which memory has the fastest access time?",
+        "options": {
+            "A": "Hard Drive",
+            "B": "RAM",
+            "C": "Cache",
+            "D": "Register"
+        },
+        "answer": "D",
+        "topic": "Computer Memory",
+        "difficulty": "medium"
+    }
+]

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Choose Your Challenge</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <h1>Quiz Master</h1>
+            <p class="subtitle">Test your knowledge across different domains</p>
+        </header>
+
+        <main class="container">
+            <div class="categories-grid">
+                {% for category in categories %}
+                <a href="{% url 'quiz' category.slug %}" class="category-card">
+                    <div class="category-icon">
+                        {% if category.slug == 'it' %}
+                        🖥️
+                        {% elif category.slug == 'computer-fundamentals' %}
+                        💻
+                        {% elif category.slug == 'maths' %}
+                        🔢
+                        {% elif category.slug == 'computer-networking' %}
+                        🌐
+                        {% elif category.slug == 'operating-systems' %}
+                        ⚙️
+                        {% endif %}
+                    </div>
+                    <h2>{{ category.name }}</h2>
+                    <p class="category-description">Challenge yourself with questions from all difficulty levels</p>
+                    <div class="card-footer">
+                        <span class="start-text">Start Quiz</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2025 Quiz Master. Choose a category to begin your journey!</p>
+        </footer>
+    </div>
+</body>
+</html>

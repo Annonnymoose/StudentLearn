@@ -1,0 +1,28 @@
+[
+    {
+        "id": 6,
+        "question": "Explain the concept of Branch Prediction in modern CPUs",
+        "options": {
+            "A": "Predicting which branch of code will be executed to optimize pipeline performance",
+            "B": "Predicting memory access patterns",
+            "C": "Predicting power consumption",
+            "D": "Predicting cache hits and misses"
+        },
+        "answer": "A",
+        "topic": "Computer Architecture",
+        "difficulty": "hard"
+    },
+    {
+        "id": 7,
+        "question": "What is the significance of Virtual Memory in operating systems?",
+        "options": {
+            "A": "It's faster than physical memory",
+            "B": "It allows programs to use more memory than physically available",
+            "C": "It reduces power consumption",
+            "D": "It improves CPU performance"
+        },
+        "answer": "B",
+        "topic": "Operating Systems",
+        "difficulty": "hard"
+    }
+]

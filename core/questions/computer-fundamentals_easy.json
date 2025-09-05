@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "question": "What does CPU stand for?",
+        "options": {
+            "A": "Central Processing Unit",
+            "B": "Computer Personal Unit",
+            "C": "Central Program Utility",
+            "D": "Computer Processing Utility"
+        },
+        "answer": "A",
+        "topic": "Computer Architecture",
+        "difficulty": "easy"
+    },
+    {
+        "id": 2,
+        "question": "What is the main function of RAM?",
+        "options": {
+            "A": "Permanent storage",
+            "B": "Temporary storage",
+            "C": "Processing data",
+            "D": "Network communication"
+        },
+        "answer": "B",
+        "topic": "Computer Memory",
+        "difficulty": "easy"
+    },
+    {
+        "id": 3,
+        "question": "Which component is known as the brain of the computer?",
+        "options": {
+            "A": "RAM",
+            "B": "Hard Drive",
+            "C": "CPU",
+            "D": "Motherboard"
+        },
+        "answer": "C",
+        "topic": "Computer Architecture",
+        "difficulty": "easy"
+    }
+]

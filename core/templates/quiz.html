@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }} Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <main class="container">
+        <div class="quiz-header">
+            <h1>{{ category.name }} Quiz</h1>
+            <div class="quiz-info">
+                <span class="timer" id="timer">Time remaining: 20:00</span>
+            </div>
+        </div>
+
+        <form method="post" id="quiz-form">
+            {% csrf_token %}
+            <input type="hidden" name="attempt_id" value="{{ attempt_id }}">
+            
+            <ol class="questions-list">
+                {% for question in questions %}
+                <li class="question">
+                    <h3>{{ question.question }}</h3>
+                    <div class="options">
+                        {% for key, value in question.options.items %}
+                        <div class="option">
+                            <input type="radio" 
+                                   name="q_{{ question.original_id }}" 
+                                   id="q{{ question.original_id }}_{{ key }}"
+                                   value="{{ key }}">
+                            <label for="q{{ question.original_id }}_{{ key }}">{{ key }}. {{ value }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ol>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">Submit Quiz</button>
+            </div>
+        </form>
+    </main>
+    <script src="{% static 'js/quiz.js' %}"></script>
+</body>
+</html>

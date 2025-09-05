@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - {{ category.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <main class="container">
+        <h1>Quiz Results</h1>
+        
+        <div class="results-summary">
+            <h2>{{ category.name }}</h2>
+            <div class="score-details">
+                <p>Total Questions: {{ result.total }}</p>
+                <p>Correct Answers: {{ result.correct }}</p>
+                <p>Score: {{ result.percentage|floatformat:1 }}%</p>
+            </div>
+        </div>
+
+        <div class="performance-analysis">
+            {% if strengths %}
+            <div class="strengths">
+                <h3>Your Strengths</h3>
+                <ul>
+                    {% for topic in strengths %}
+                    <li>{{ topic }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if needs_improvement %}
+            <div class="needs-improvement">
+                <h3>Areas for Improvement</h3>
+                <ul>
+                    {% for topic in needs_improvement %}
+                    <li>{{ topic }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="action-buttons">
+            <a href="{% url 'quiz' category.slug %}" class="btn btn-retry">Try Again</a>
+            <a href="{% url 'landing' %}" class="btn btn-home">Back to Categories</a>
+        </div>
+    </main>
+</body>
+</html>
